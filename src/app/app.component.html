@@ -1,0 +1,22 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<hr/>
+<carousel [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="singleSlideOffset"
+          [noWrap]="noWrap"
+          (activeSlideChange)='gotChange()'
+          (slideRangeChange)='gotRangeChange()'
+          [showIndicators]='false'
+          [interval]='false'
+           >
+  <slide *ngFor="let img of masterArray; let idx of index"  >
+    <img [src]="img" alt="slide {{idx}}" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+
+Range: {{activeRange}} <br/>
+<!-- imagesArray: {{imagesArray.length}} <br/> -->
+masterArray: {{masterArray.length}} <br/>
+<b>{{loopcomplete}}</b>
